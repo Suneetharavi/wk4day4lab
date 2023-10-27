@@ -1,24 +1,41 @@
-class Hamster{
-    owner=''
+//Creater Hamster Class
+class Hamster
+{
+    // owner - string, initially set as an empty string
+    owner='';
+    //attributes:
+    // name - string, set the name from parameter in constructor method
     constructor(name){
-        this.name = name
+        this.name=name;
     }
-    price = 15
+    // price - integer, set as 15
+    price=15;
+       
+    // methods:
+    // wheelRun() - log "squeak squeak"
+    // eatFood() - log "nibble nibble"
+    // getPrice() - return the price    
+
     wheelRun(){
-
+        console.log('squeak squeak')
     }
+
     eatFood(){
-
+        console.log('nibble nibble')
     }
+
     getPrice(){
-
+        return this.price
     }
 
+    setOwner(name){
+        this.owner=name;
+    }
 }
+//commited till here with message "Created Hamster class"
 
-//committed with message "created Hamster class"
-console.log('////////////////////////////////////////////////')
 //Creating Person Class
+
 class Person{
     constructor(name){
     this.name = name;
@@ -72,8 +89,7 @@ class Person{
         }
     }
 }  
-//commited till here with message "Created Hamster class"
-
+//committed with message "created Person class"
 //Create a Story with your Person class
 //Instantiate a new Person named Timmy
 const Timmy=new Person('Timmy');
@@ -119,4 +135,25 @@ for(let i=1; i<=2; i++) {
 console.log(Timmy)
 //commited till here with message "Created Timmy's Story"
 
-console.log('///////////////////////////////////////')
+console.log('///////// Chef Make Dinners //////////')
+
+class Dinner {
+    constructor(appetizer, entree, dessert){
+        this.appetizer = appetizer;
+        this.entree = entree;
+        this.dessert = dessert;
+}
+}
+//Factory Class
+class Chef {
+    cookDinner(appetizer, entree, dessert){
+        const dinner=new Dinner(appetizer, entree, dessert);
+        return dinner;
+    }
+}
+const mychef = new Chef();
+console.log(mychef.cookDinner('Samosa','Pasta','Cake'))
+console.log(mychef.cookDinner('FrenchFries','Pizza','IceCream'))
+console.log(mychef.cookDinner('Noodles','Biryani','Drinks'))
+
+
